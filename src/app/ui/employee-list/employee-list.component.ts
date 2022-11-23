@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EmployeeModel } from '../../model/employee.model';
-import { HttpClient } from '@angular/common/http';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'employee-list',
@@ -15,8 +15,7 @@ import { HttpClient } from '@angular/common/http';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeListComponent {
-  public data$: Observable<EmployeeModel[]> =
-    this._client.get<EmployeeModel[]>('/assets/data/employees.json');
+  public data$: Observable<EmployeeModel[]> = this._employeeService.getAll();
 
-  constructor(private _client: HttpClient) {}
+  constructor(private _employeeService: EmployeeService) {}
 }

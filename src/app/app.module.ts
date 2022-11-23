@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeListComponentModule } from "./ui/employee-list/employee-list.component-module";
+import { EmployeeListComponentModule } from './ui/employee-list/employee-list.component-module';
 import { EmployeesFacesComponent } from './ui/employees-faces/employees-faces.component';
+import { EmployeeService } from './services/employee.service';
 
 @NgModule({
   declarations: [AppComponent, EmployeesFacesComponent],
@@ -14,7 +15,7 @@ import { EmployeesFacesComponent } from './ui/employees-faces/employees-faces.co
     HttpClientModule,
     EmployeeListComponentModule,
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
