@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EmployeeModel } from '../../model/employee.model';
 import { EmployeeService } from '../../services/employee.service';
+import {PersonModel} from "../../model/person.model";
 
 @Component({
   selector: 'app-employees-faces',
@@ -9,7 +9,7 @@ import { EmployeeService } from '../../services/employee.service';
   styleUrls: ['./employees-faces.component.scss'],
 })
 export class EmployeesFacesComponent {
-  public data$: Observable<EmployeeModel[]> = this._employeeService.getAll();
+  public data$: Observable<PersonModel[]> = this._employeeService.getAll();
 
   constructor(private _employeeService: EmployeeService) {}
 }
