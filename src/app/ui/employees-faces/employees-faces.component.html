@@ -1,0 +1,9 @@
+<div *ngFor="let employee of data$ | async" class="employees-face-element">
+  <img
+    [src]="employee.image"
+    [alt]="employee.image"
+    class="employees-face-image"
+  />
+  <br />
+  <span>{{ employee.name }}</span>
+</div>

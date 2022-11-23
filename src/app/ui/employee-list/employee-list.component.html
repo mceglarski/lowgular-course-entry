@@ -1,5 +1,7 @@
 <table class="employee-list-table" *ngIf="data$ | async as data; else empty">
-  <caption><h1>Employee list</h1></caption>
+  <caption>
+    <h1>Employee list</h1>
+  </caption>
   <thead>
     <tr>
       <th>Id</th>
@@ -11,7 +13,7 @@
     <tr *ngFor="let employee of data">
       <td>{{ employee.id }}</td>
       <td>{{ employee.name }}</td>
-      <td>{{employee.email}}</td>
+      <td>{{ employee.email }}</td>
     </tr>
   </tbody>
 </table>
