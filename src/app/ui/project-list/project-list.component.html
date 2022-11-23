@@ -1,0 +1,26 @@
+<table
+  class="project-list-table"
+  *ngIf="projectData$ | async as projects; else empty"
+>
+  <caption>
+    <h1>Project list</h1>
+  </caption>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Owner</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{ project.id }}</td>
+      <td>{{ project.name }}</td>
+      <td>{{ project.owner }}</td>
+      <td>{{ project.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #empty> There is no project data </ng-template>

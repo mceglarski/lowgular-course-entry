@@ -1,22 +1,22 @@
-.employee-list-table {
+.project-list-table {
   border-collapse: collapse;
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.employee-list-table caption {
+.project-list-table caption {
   margin-left: 10px;
   text-align: left;
 }
 
-.employee-list-table thead tr {
-  background-color: #006f98;
+.project-list-table thead tr {
+  background-color: #4c0098;
   color: #ffffff;
   text-align: left;
 }
 
-.employee-list-table th,
-.employee-list-table td {
+.project-list-table th,
+.project-list-table td {
   padding: 12px 15px;
 }
