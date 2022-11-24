@@ -8,14 +8,23 @@ import { EmployeesFacesComponent } from './ui/employees-faces/employees-faces.co
 import { EmployeeService } from './services/employee.service';
 import { ProjectService } from './services/project.service';
 import { ProjectListComponent } from './ui/project-list/project-list.component';
+import { EmployeeFormComponent } from './ui/employee-form/employee-form.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent, EmployeesFacesComponent, ProjectListComponent],
+  declarations: [
+    AppComponent,
+    EmployeesFacesComponent,
+    ProjectListComponent,
+    EmployeeFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     EmployeeListComponentModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [EmployeeService, ProjectService],
   bootstrap: [AppComponent],

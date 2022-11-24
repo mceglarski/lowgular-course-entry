@@ -1,0 +1,32 @@
+.employee-form-main {
+  margin-top: 25px;
+}
+
+.employee-form-main input[type="text"],
+.employee-form-main input[type="number"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #bebebe;
+  padding: 7px;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.employee-form-main input[type="text"]:focus,
+.employee-form-main input[type="number"]:focus {
+  -moz-box-shadow: 0 0 8px #88d5e9;
+  -webkit-box-shadow: 0 0 8px #88d5e9;
+  box-shadow: 0 0 8px #88d5e9;
+  border: 1px solid #88d5e9;
+}
+
+.employee-form-main input[type="submit"],
+.employee-form-main input[type="button"] {
+  margin-left: 5px;
+  padding: 8px 15px 8px 15px;
+  color: black;
+}
