@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CreateEmployeeModel } from '../../model/create-employee.model';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-employee-form',
@@ -13,11 +15,15 @@ export class EmployeeFormComponent {
     salary: new FormControl(null, [Validators.required, Validators.min(0)]),
   });
 
-  public onSubmit(form: { name: string; age: number; salary: number }): void {
-    alert(
-      'User was successfully added to the database. Name: ' + form.name +
-        ', age: ' + form.age +
-        ', salary: ' + form.salary
+  constructor(private _employeeService: EmployeeService) {}
+
+  public onFormSubmitted(form: CreateEmployeeModel): void {
+    this._employeeService.create(form).subscribe(
+      (response) =>
+        alert('User was successfully added to the database. Name: ' +
+            form.name + ', age: ' + form.age + ', salary: ' + form.salary
+        ),
+      (error) => alert(error.message)
     );
   }
 }

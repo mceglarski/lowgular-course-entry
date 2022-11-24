@@ -1,7 +1,7 @@
 <form
   [formGroup]="employeeForm"
   class="employee-form-main"
-  (ngSubmit)="onSubmit(employeeForm.value)">
+  (ngSubmit)="onFormSubmitted(employeeForm.value)">
   <input type="text" formControlName="name" placeholder="Name" />
   <input type="number" formControlName="age" placeholder="Age" />
   <input type="number" formControlName="salary" placeholder="Salary" />
