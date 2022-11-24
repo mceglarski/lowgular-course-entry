@@ -15,4 +15,8 @@ export class EmployeeService {
   public create(employee: CreateEmployeeModel): Observable<any> {
     return this._client.post('https://dummy.restapiexample.com/api/v1/create', employee);
   }
+
+  public delete(id: string): Observable<any> {
+    return this._client.delete('https://dummy.restapiexample.com/api/v1/delete/' + id);
+  }
 }
