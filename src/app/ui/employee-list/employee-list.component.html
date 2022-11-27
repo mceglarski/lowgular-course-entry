@@ -1,23 +1,23 @@
-<table class="employee-list-table" *ngIf="data$ | async as data; else empty">
-  <caption>
-    <h1>Employee list</h1>
-  </caption>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let employee of data">
-      <td>{{ employee.personalNumber }}</td>
-      <td>{{ employee.name }}</td>
-      <td>{{ employee.mail }}</td>
-      <td><button (click)="remove(employee.personalNumber)">Remove</button></td>
-    </tr>
-  </tbody>
-</table>
+<div class="container-fluid">
+  <h1>Employee list</h1>
+  <table class="employee-list-table" *ngIf="data$ | async as data; else empty">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of data | slice:0:10">
+        <td>{{ employee.personalNumber }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.mail }}</td>
+        <td><button class="btn btn-primary" (click)="remove(employee.personalNumber)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
 
-<ng-template #empty> There is no employee data </ng-template>
+  <ng-template #empty> There is no employee data </ng-template>
+</div>
