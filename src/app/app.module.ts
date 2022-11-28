@@ -10,6 +10,9 @@ import { ProjectService } from './services/project.service';
 import { ProjectListComponent } from './ui/project-list/project-list.component';
 import { EmployeeFormComponent } from './ui/employee-form/employee-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './ui/home/home.component';
+import { NavbarComponent } from './ui/shared/navbar/navbar.component';
+import { FooterComponent } from './ui/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EmployeesFacesComponent,
     ProjectListComponent,
     EmployeeFormComponent,
+    HomeComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     EmployeeListComponentModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [EmployeeService, ProjectService],
   bootstrap: [AppComponent],
