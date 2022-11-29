@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <h1>Employee details</h1>
+  <div *ngIf="details$ | async as details">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ details.id }}</th>
+          <td>{{ details.name }}</td>
+          <td>{{ details.email }}</td>
+          <td>
+            <img
+              class="employee-details-image"
+              src="assets/green_check.png"
+              [alt]="details.image"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

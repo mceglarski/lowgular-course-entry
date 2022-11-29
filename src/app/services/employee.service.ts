@@ -4,11 +4,29 @@ import { map, Observable } from 'rxjs';
 import { PersonModel } from '../model/person.model';
 import { CreateEmployeeModel } from '../model/create-employee.model';
 import { ApiResponse } from './api.response';
-import { EmployeeResponse } from '../model/employee.model';
+import { EmployeeModel, EmployeeResponse } from '../model/employee.model';
 
 @Injectable()
 export class EmployeeService {
   constructor(private _client: HttpClient) {}
+
+  public getOne(id: string): Observable<EmployeeModel> {
+    return this._client
+      .get<ApiResponse<EmployeeResponse>>(
+        'https://dummy.restapiexample.com/api/v1/employee/' + id
+      )
+      .pipe(
+        map((response): EmployeeModel => {
+          return {
+            name: response.data.employee_name,
+            id: response.data.id,
+            image: response.data.profile_image,
+            email:
+              response.data.employee_name.replace(/\s/g, '') + '@lowgular.io',
+          };
+        })
+      );
+  }
 
   public getAll(): Observable<PersonModel[]> {
     return this._client
@@ -22,7 +40,9 @@ export class EmployeeService {
               name: employeeResponse.employee_name,
               personalNumber: employeeResponse.id,
               img: employeeResponse.profile_image,
-              mail: (employeeResponse.employee_name).replace(/\s/g, "") + '@lowgular.io',
+              mail:
+                employeeResponse.employee_name.replace(/\s/g, '') +
+                '@lowgular.io',
             };
           });
         })

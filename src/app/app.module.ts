@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './ui/home/home.component';
 import { NavbarComponent } from './ui/shared/navbar/navbar.component';
 import { FooterComponent } from './ui/shared/footer/footer.component';
+import { EmployeeDetailsComponent } from './ui/employee-details/employee-details.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { FooterComponent } from './ui/shared/footer/footer.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
+    EmployeeDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { FooterComponent } from './ui/shared/footer/footer.component';
     HttpClientModule,
     EmployeeListComponentModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [EmployeeService, ProjectService],
   bootstrap: [AppComponent],

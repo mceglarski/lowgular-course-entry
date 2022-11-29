@@ -14,10 +14,14 @@
         <td>{{ employee.personalNumber }}</td>
         <td>{{ employee.name }}</td>
         <td>{{ employee.mail }}</td>
-        <td><button class="btn btn-primary" (click)="remove(employee.personalNumber)">Remove</button></td>
+        <td>
+          <button class="btn btn-info" [routerLink]="'/employee-details/'+employee.personalNumber">Details</button>
+          <button class="btn btn-warning" (click)="remove(employee.personalNumber)">Remove</button>
+        </td>
       </tr>
     </tbody>
   </table>
 
   <ng-template #empty> There is no employee data </ng-template>
 </div>
+
